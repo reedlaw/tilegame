@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+canvas#canvas
+{
+
+}
+
+div#output
+{
+   width: 250px;
+   height: 50px;
+
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   overflow-x: hidden;
+   overflow-y: auto;
+
+   background-color: #000;
+   color: #fff;
+}
+
