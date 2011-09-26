@@ -43,8 +43,8 @@ engine.player.calcLoc = function()
    };
 
    var screen = {
-      width:  engine.screen.width,
-      height: engine.screen.height
+      width:  engine.screen.tilesX * 16,
+      height: engine.screen.tilesY * 16
    };
 
    var x = (screen.width  / 2) - (character.width / 2);

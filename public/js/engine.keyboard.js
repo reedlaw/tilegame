@@ -41,7 +41,10 @@ engine.keyboard.parseInput = function(event)
     break;
 
   case engine.keyboard.getValue('space'):
-    console.log(engine.player.calcLoc())
+    var loc = engine.player.calcLoc();
+    var x = Math.floor(loc.left/16) + engine.viewport.x;
+    var y = Math.floor(loc.top/16) + engine.viewport.y;
+    engine.currentMap[y][x] = {ground: 1}
     break;
   }
 

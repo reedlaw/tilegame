@@ -15,7 +15,7 @@ engine.setMap = function(mapData)
 
 engine.output = function(message)
 {
-  engine.outhnd.innerHTML += '<br />' + message;
+  engine.outhnd.innerHTML += message + '<br />';
 };
 
 
@@ -32,7 +32,7 @@ engine.draw = function()
 
 engine.start = function(mapData, x, y)
 {
-  engine.output('starting...');
+  engine.output('loading...');
   engine.viewport.x = x;
   engine.viewport.y = y;
 

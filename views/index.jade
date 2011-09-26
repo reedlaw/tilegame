@@ -1,5 +1,6 @@
 div(id="output")
 canvas(id="canvas")
+
 script(type='text/javascript', src='js/engine.js')
 script(type='text/javascript', src='js/engine.screen.js')
 script(type='text/javascript', src='js/engine.viewport.js')
@@ -8,8 +9,6 @@ script(type='text/javascript', src='js/engine.tile.js')
 script(type='text/javascript', src='js/engine.keyboard.js')
 script(type='text/javascript', src='js/engine.player.js')
 script
-  canvas.width = document.width;
-  canvas.height = document.height;
   $(document).ready(function() {
     $.ajax({
       url: 'map.json',
@@ -17,7 +16,13 @@ script
       async: false,
       success: function(json) { window.mapone = json; }
     });
-    engine.start(window.mapone, 0, 0);   //change the last parameters to 'move' the map.
+    var canvas = document.getElementById("canvas");
+    var viewportWidth = window.innerWidth;
+    var viewportHeight = window.innerHeight;
+    canvas.setAttribute("width", viewportWidth);
+    canvas.setAttribute("height", viewportHeight);
+
+    engine.start(window.mapone, 0, 0);
   });
   window.addEventListener('keydown', engine.keyboard.parseInput, false);
 
