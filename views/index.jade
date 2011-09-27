@@ -24,5 +24,6 @@ script
 
     engine.start(window.mapone, 0, 0);
   });
+  
   window.addEventListener('keydown', engine.keyboard.parseInput, false);
-
+  window.addEventListener('keyup', function() { engine.keyboard.fired = false; }, false);

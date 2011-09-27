@@ -58,7 +58,7 @@ engine.start = function(mapData, x, y)
 
   engine.setMap(mapData);
   engine.draw();
-
+  engine.keyboard.canInput = true;
 
   engine.output('done');
 };
